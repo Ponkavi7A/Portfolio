@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="My Portfolio">
+	<title>My Portfolio</title>
+	<link rel = "stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+	<header>
+		<div id="heading">
+			<h1>My Portfolio</h1>
+		</div>
+		<div id="options">
+			<button class="options"><a href="#home">Home</a></button>
+			<button class="options"><a href="#about">About</a></button>
+			<button class="options"><a href="#projects">Projects</a></button>
+			<button class="options"><a href="#skills">Skills</a></button>
+		</div>
+	</header>
+
+	<div class="glowing-circle circle1"></div>
+	<div class="glowing-circle circle2"></div>
+	<div class="glowing-circle circle3"></div>
+
+	<section id="home">
+		<div class="home-content">
+			<h2>Backend Trainee</h2>
+			<p>Welcome to my portfolio.I am ponkavi. I am from Poolangulam. I love to solve problems.I approach challenges with determination, always striving to deliver
+			high-quality code that exceeds expectations.</p>
+		</div>
+		<div class="my-photo">
+			<img src="images/me.jpg">
+		</div>
+	</section>
+
+	<section id="about">
+		<h2>About Me</h2>
+		<div class="contact-info">
+			<p><b>Name:</b> Ponkavi T</p>
+			<p><b>Emp-ID:</b>ZSTTK389</p>
+			<p><b>Email:</b> ponkavi.t@zohocorp.com</p>
+			<p><b>Contact.No:</b>9361983317</p>
+			
+		</div>
+	</section>
+
+	<section id="projects">
+		<h2>Projects</h2>
+		
+
+		<div class="filter-buttons">
+			<button class="filter-btn active" data-filter="all">All Projects</button>
+			<button class="filter-btn" data-filter="java">Java</button>
+			<button class="filter-btn" data-filter="html">HTML</button>
+			<button class="filter-btn" data-filter="js">JavaScript</button>
+			<button class="filter-btn" data-filter="scratch">Scratch</button>
+		</div>
+
+		<div class="projects-container">
+			<div class="project-card" data-category="scratch">
+				<div class="project-img">
+					<img src="images/Knowords.png">
+				</div>
+				<span class="project-type">Scratch</span>
+				<div class="project-info">
+					<h3>Knowords Game</h3>
+					<p>Time to improve your English!</p>
+					<div class="project-links">
+						<a href="https://scratch.mit.edu/projects/1040677956" class="project-link demo-link">View Demo</a>
+						<a href="https://scratch.mit.edu/projects/1040677956/editor/" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="project-card" data-category="html">
+				<div class="project-img">
+					<img src="images/teddy.png">
+				</div>
+				<span class="project-type">HTML/CSS</span>
+				<div class="project-info">
+					<h3>Teddy.com</h3>
+					<p>Lovely books for kids!</p>
+					<div class="project-links">
+						<a href="https://ponkavit-7653-8443.zcodeusers.in/Teddy/landingpage.html" class="project-link demo-link">View Demo</a>
+						<a href="https://code.zoho.com/portal/zstechtenkasi/363000000073121#CODE_EDITOR/file:///home/workspace/Teddy/landingpage.html" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="project-card" data-category="js">
+				<div class="project-img">
+					<img src="images/wordle.png">
+				</div>
+				<span class="project-type">JavaScript</span>
+				<div class="project-info">
+					<h3>Word games</h3>
+					<p>A game of words: Wordle & Spellie</p>
+					<div class="project-links">
+						<a href="" class="project-link demo-link">View Demo</a>
+						<a href="" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<div class="project-card" data-category="java">
+				<div class="project-img">
+					<img src="images/hash.png">
+				</div>
+				<span class="project-type">Java</span>
+				<div class="project-info">
+					<h3>My HashSet</h3>
+					<p> My implementation of a custom hashset</p></p>
+					<div class="project-links">
+						<a href="#" class="project-link demo-link">View Demo</a>
+						<a href="#" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="project-card" data-category="java">
+				<div class="project-img"></div>
+				<span class="project-type">Java</span>
+				<div class="project-info">
+					<h3>Stride API</h3>
+					<p>API documentation with testing!</p>
+					<div class="project-links">
+						<a href="#" class="project-link demo-link">View Demo</a>
+						<a href="#" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+			<div class="project-card" data-category="java">
+				<div class="project-img">
+						<img src="images/todo.webp">
+				</div>
+				<span class="project-type">Java</span>
+				<div class="project-info">
+					<h3>Cute Todo</h3>
+					<p>A simple Todo app with a user-friendly interface</p>
+					<div class="project-links">
+						<a href="#" class="project-link demo-link">View Demo</a>
+						<a href="#" class="project-link code-link">View Code</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+	<section id="skills">
+		<h2>Skills</h2>
+		<p>Here are the technical knowlwdge I've gained in zoho schools:</p>
+
+		<div class="skills-container">
+			<div class="skill-card">
+				<h3>HTML</h3>
+				<p>Writing clean HTML, making websites easy to use, and using new HTML features.</p>
+			</div>
+
+			<div class="skill-card">
+				<h3>CSS</h3>
+				<p>Raking websites look good on all screens, using Flexbox and Grid for layout, adding animations and effects, and using
+				modern CSS tools</p>
+			</div>
+
+			<div class="skill-card">
+				<h3>JavaScript</h3>
+				<p>Writing modern JavaScript, changing web pages with code, handling tasks that take time without stopping the page,
+				getting data from servers, and building interactive websites</p>
+			</div>
+
+			<div class="skill-card">
+				<h3>Java</h3>
+				<p>OOP principles, Servlets, Inheritence, multithreading, enterprise patterns</p>
+			</div>
+
+			<div class="skill-card">
+				<h3>React</h3>
+				<p>Currently learning component architecture, hooks, state management, and modern frontend practices</p>
+			</div>
+
+			<div class="skill-card">
+				<h3>MySQL</h3>
+				<p>Database design, complex SQL queries, performance optimization, and data management</p>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>First solve the problem then write the code! Happy learning!</p>
+	</footer>
+
+	<script>
+		
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                 
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+              
+                    this.classList.add('active');
+                    
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                   
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+		});
+         
+        //     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        //         anchor.addEventListener('click', function(e) {
+        //             e.preventDefault();
+                    
+        //             const targetId = this.getAttribute('href');
+        //             const targetElement = document.querySelector(targetId);
+                    
+        //             window.scrollTo({
+        //                 top: targetElement.offsetTop,
+        //                 behavior: 'smooth'
+        //             });
+        //         });
+        //     });
+        // });
+		
+	</script>
+</body>
+
+</html>
