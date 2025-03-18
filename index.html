@@ -345,58 +345,87 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                 
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-              
-                    this.classList.add('active');
-                    
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                   
-                    projectCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 100);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectsContainer = document.querySelector('.projects-container');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Set initial state - "All" button should be active by default
+    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+    
+    // Function to apply filtering
+    function applyFilter(filterValue) {
+        let visibleCards = [];
+        let hiddenCards = [];
+        
+        // Sort cards into visible and hidden arrays
+        projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                visibleCards.push(card);
+            } else {
+                hiddenCards.push(card);
+            }
+        });
+        
+        // Hide cards first with animation
+        hiddenCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px) scale(0.9)';
+            card.style.pointerEvents = 'none'; // Prevent clicks during transition
+        });
+        
+        // After animation completes, adjust the display property
+        setTimeout(() => {
+            hiddenCards.forEach(card => {
+                card.style.display = 'none';
             });
-		});
-         
-        //     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        //         anchor.addEventListener('click', function(e) {
-        //             e.preventDefault();
-
-
-
-
-                    
-        //             const targetId = this.getAttribute('href');
-        //             const targetElement = document.querySelector(targetId);
-                    
-        //             window.scrollTo({
-        //                 top: targetElement.offsetTop,
-        //                 behavior: 'smooth'
-        //             });
-        //         });
-        //     });
-        // });
+            
+            // Show visible cards
+            visibleCards.forEach(card => {
+                card.style.display = 'flex';
+                // Use a tiny delay to ensure the browser processes the display change first
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.pointerEvents = 'auto';
+                }, 10);
+            });
+            
+            // Adjust grid layout based on number of visible cards
+            updateGridLayout(visibleCards.length);
+        }, 300); // Match transition duration in CSS
+    }
+    
+    // Function to update grid layout
+    function updateGridLayout(visibleCount) {
+        if (visibleCount <= 2) {
+            projectsContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 350px))';
+            projectsContainer.style.justifyContent = 'center';
+        } else {
+            projectsContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            projectsContainer.style.justifyContent = 'stretch';
+        }
+    }
+    
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Don't do anything if already active
+            if (this.classList.contains('active')) return;
+            
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Apply filtering
+            applyFilter(this.getAttribute('data-filter'));
+        });
+    });
+    
+    // Initialize with "all" filter
+    applyFilter('all');
+});
 		
 	</script>
 </body>
