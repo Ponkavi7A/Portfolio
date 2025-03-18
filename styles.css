@@ -171,6 +171,14 @@ p {
 	border-radius: 50%;
 	z-index: -1;
 }
+   .info {
+        display: flex;
+        justify-content: left;
+    }
+    .label {
+        min-width: 100px;
+        font-weight: bold;
+    }
 
 .home-content {
 	flex: 1;
