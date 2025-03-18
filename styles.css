@@ -517,6 +517,9 @@ footer p{
 footer {
 	text-align: center;
 	padding: 30px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 	background-color: var(--bg-secondary);
 	color: var(--text-secondary);
 	position: relative;
